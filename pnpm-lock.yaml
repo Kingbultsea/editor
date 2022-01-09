@@ -7,7 +7,7 @@ specifiers:
   '@types/spark-md5': ^3.0.2
   '@vitejs/plugin-vue': ^2.0.0
   axios: ^0.24.0
-  husky: ^7.0.4
+  chalk: ^5.0.0
   koa: ^2.13.4
   koa-body: ^4.2.0
   koa-static: ^5.0.0
@@ -35,7 +35,7 @@ devDependencies:
   '@types/node': registry.npmmirror.com/@types/node/17.0.8
   '@types/spark-md5': registry.npmmirror.com/@types/spark-md5/3.0.2
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/2.0.1_vite@2.7.10+vue@3.2.26
-  husky: registry.npmmirror.com/husky/7.0.4
+  chalk: registry.npmmirror.com/chalk/5.0.0
   path: registry.npmmirror.com/path/0.12.7
   sass: registry.npmmirror.com/sass/1.46.0
   typescript: registry.npmmirror.com/typescript/4.5.4
@@ -1248,6 +1248,13 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
+  registry.npmmirror.com/chalk/5.0.0:
+    resolution: {integrity: sha512-/duVOqst+luxCQRKEo4bNxinsOQtMP80ZYm7mMqzuh5PociNL0PvmHFvREJ9ueYL2TxlHjBcmLCdmocx9Vg+IQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chalk/download/chalk-5.0.0.tgz}
+    name: chalk
+    version: 5.0.0
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
+    dev: true
+
   registry.npmmirror.com/character-parser/2.2.0:
     resolution: {integrity: sha1-x84o821LzZdE5f/CxfzeHHMmH8A=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/character-parser/download/character-parser-2.2.0.tgz}
     name: character-parser
@@ -1621,14 +1628,6 @@ packages:
       statuses: registry.nlark.com/statuses/1.5.0
       toidentifier: registry.npmmirror.com/toidentifier/1.0.1
     dev: false
-
-  registry.npmmirror.com/husky/7.0.4:
-    resolution: {integrity: sha1-JCBIJF3EnI+xvwzHz7mN1yJTFTU=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/husky/download/husky-7.0.4.tgz}
-    name: husky
-    version: 7.0.4
-    engines: {node: '>=12'}
-    hasBin: true
-    dev: true
 
   registry.npmmirror.com/immutable/4.0.0:
     resolution: {integrity: sha1-uG943mre82CDle+yaakUYnl+LCM=, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/immutable/download/immutable-4.0.0.tgz}

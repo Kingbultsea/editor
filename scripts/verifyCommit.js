@@ -1,5 +1,5 @@
-const chalk = require('chalk')
 const msgPath = process.env.GIT_PARAMS
+console.log(msgPath, process.env)
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
 
 const releaseRE = /^v\d/
@@ -9,9 +9,7 @@ const commitRE =
 if (!releaseRE.test(msg) && !commitRE.test(msg)) {
   console.log()
   console.error(
-    `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
-      `invalid commit message format.`
-    )}\n\n`
+    `格式错误，请查看./scripts/verifyCommit.js代码中的正则`
   )
   process.exit(1)
-}
+} 

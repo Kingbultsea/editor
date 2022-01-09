@@ -14,7 +14,7 @@
 ### todo
 1. 遍历Node树转换为wasm实现，浏览器不支持则降级为原本js []
 2. e2e [-]
-3. 规范git commit messgae [-]
+3. 规范git commit messgae [y]
 
 ## Product demand
 ### feature：
