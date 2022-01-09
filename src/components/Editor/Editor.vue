@@ -22,7 +22,7 @@ async function parsePaste(e: ClipboardEvent) {
         appendElement(dom, false)
       })
     }
-    
+
     if (item.kind === 'file' && /^image.*/.test(item.type)) {
       console.log(item.getAsFile())
       await uploadFile([item.getAsFile()!]) // 自动植入
@@ -83,9 +83,9 @@ const eidtorFeatures = [
 
 // static
 function drop(e: DragEvent) {
-  e.dataTransfer && 
-  e.dataTransfer!.files.length > 0 &&
-  uploadFile(Array.from(e.dataTransfer!.files))
+  e.dataTransfer &&
+    e.dataTransfer!.files.length > 0 &&
+    uploadFile(Array.from(e.dataTransfer!.files))
 }
 
 export default defineComponent({
@@ -107,34 +107,44 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="feature">
-    <h5
-      @mousedown="(e) => e && e.preventDefault()"
-      v-for="(li, index) in eidtorFeatures"
-      :key="index"
-      @click="li.callback"
-    >{{ li.desc }}</h5>
-    <Upload />
-  </div>
-  <div id="editor-content" contenteditable @paste="parsePaste" @drop="drop">
-    {{ msg }}123456abc
-    <div>
-      23
+  <div class="editor">
+    <div class="feature">
+      <h5
+        @mousedown="(e) => e && e.preventDefault()"
+        v-for="(li, index) in eidtorFeatures"
+        :key="index"
+        @click="li.callback"
+      >{{ li.desc }}</h5>
+      <Upload />
+    </div>
+    <div id="editor-content" contenteditable @paste="parsePaste" @drop="drop">
+      {{ msg }}123456abc
       <div>
-        9899abccc
-        <div>-</div>
-      </div>3abcc
+        23
+        <div>
+          9899abccc
+          <div>-</div>
+        </div>3abcc
+      </div>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.editor {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .feature {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   > h5 {
+    margin: 5px 12px;
     cursor: pointer;
-    margin-right: 10px;
+    min-width: max-content;
   }
 }
 
@@ -143,5 +153,6 @@ export default defineComponent({
   border: 2px solid rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   text-align: left;
+  flex-grow: 1;
 }
 </style>

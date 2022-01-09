@@ -19,6 +19,15 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  height: 100vh;
+  max-width: 800px;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 </style>

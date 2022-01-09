@@ -1,7 +1,7 @@
 const getIPv4AddressList = require('../dist/utils').getIPv4AddressList
-
+const chalk = require("chalk")
 const createServe = require("../dist/server").default
-let port = 3001
+let port = 3007
 const server = createServe().listen(port)
 
 server.on('error', (e) => {
@@ -19,7 +19,7 @@ server.on('error', (e) => {
 server.on('listening', () => {
     console.log(`服务开启：`)
     getIPv4AddressList().forEach((ip) => {
-        console.log(`  > http://${ip}:${port}`)
+        console.log(`  > ${chalk.blue(`http://${ip}:${port}`)}`)
     })
     console.log(' ')
 })

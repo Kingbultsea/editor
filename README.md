@@ -3,6 +3,16 @@
 ## Description
 一个编辑器，利用光标API去抓取元素进行操作，支持黏贴任何内容（浏览器支持的也会支持）。
 
+### 启动
+```
+> pnpm i
+> pnpm run start
+```
+打开http://localhost:3000/
+
+### 配置项
+目前使用node.js作为上传服务，如果端口变动，需要更改.env文件中的VITE_HOST为对应的值。
+
 ### 文件上传过程 
 * 读取文件，中间通过requestIdleCallback进行分块hash。
 
